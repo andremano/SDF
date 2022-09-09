@@ -1,0 +1,250 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="native:cellstatistics_1">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:cellstatistics"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="527.2"/>
+        <Option type="double" name="component_pos_y" value="330.20000000000005"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Cell statistics"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="460"/>
+      <Option type="double" name="component_pos_y" value="405"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="native:cellstatistics_1"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="combined_surface">
+          <Option type="QString" name="child_id" value="native:cellstatistics_1"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="combined_surface"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="0"/>
+          <Option type="double" name="component_pos_y" value="0"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="combined_surface"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="false"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="IGNORE_NODATA">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="bool" name="static_value" value="true"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="raster_surfaces"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="OUTPUT_NODATA_VALUE">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="double" name="static_value" value="-9999"/>
+          </Option>
+        </Option>
+        <Option type="List" name="REFERENCE_LAYER">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="reference_raster"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+        <Option type="List" name="STATISTIC">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="criteria"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="Map" name="designerParameterValues">
+    <Option type="QgsProcessingOutputLayerDefinition" name="combined_surface">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="int" name="criteria" value="2"/>
+    <Option type="List" name="raster_surfaces">
+      <Option type="QString" value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_MsIhXk/ab712341b4784b389a90e7a264c1487e/RESULT.sdat"/>
+      <Option type="QString" value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_MsIhXk/728b4522936e491c8e14af3be1fdc0b8/RESULT.sdat"/>
+    </Option>
+    <Option type="QString" name="reference_raster" value="RESULT_68fa5148_780f_4b67_b5de_a7338c6d1be3"/>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option type="Map" name="help">
+    <Option type="QString" name="ALG_CREATOR" value="Algorithm author: André da Silva Mano | Faculty ITC - University of Twente | Department of Urban and Regional Planning and Geo-Information Management | 2022 "/>
+    <Option type="QString" name="ALG_DESC" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>Combines two or more raster layers where the output raster pixel values are obtained using one of three criteria: the maximum , minimum, or mean value. &lt;/p>&#xa;&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>This tool is helpful in the case where there is more than one output from the Create interpolated surface or the Create restriction surface tools, and a combination of values has to be performed to obtain one final surface. &lt;/p>&lt;/body>&lt;/html>"/>
+    <Option type="QString" name="ALG_VERSION" value="0.1"/>
+    <Option type="QString" name="combined_surface" value="A raster layer whose pixel values are the result of one of the three aggregation criteria. For example the value of an output pixel where the input raster A has a value of 2 and the input raster B has the value of 6 will be:&#xa;&#xa;6 if the criteria is Max;&#xa;2 if the criteria is Min;&#xa;4 if the criteria is Mean;"/>
+    <Option type="QString" name="criteria" value="Which aggregation criteria is to be used: Max (maximum), Min (minimum) the Mean."/>
+    <Option type="QString" name="raster_surfaces" value="List of raster surfaces to be combined."/>
+    <Option type="QString" name="reference_raster" value="A raster layer that will determine the pixel size and analysis extention of the analysis. Ideally it should be one of the input Raster surfaces."/>
+  </Option>
+  <Option type="QString" name="internal_version" value="Version2"/>
+  <Option name="modelVariables"/>
+  <Option type="QString" name="model_group" value="SDF"/>
+  <Option type="QString" name="model_name" value="Combine raster surfaces"/>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="combined_surface">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="combined_surface"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:cellstatistics_1"/>
+        <Option type="QString" name="_modelChildOutputName" value="combined_surface"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="combined_surface"/>
+      <Option type="QString" name="parameter_type" value="rasterDestination"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="criteria">
+      <Option type="bool" name="allow_multiple" value="false"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="Criteria"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value="Which aggregation criteria is to be used: Max (maximum), Min (minimum) the Mean."/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="criteria"/>
+      <Option type="StringList" name="options">
+        <Option type="QString" value="Max"/>
+        <Option type="QString" value="Min"/>
+        <Option type="QString" value="Mean"/>
+      </Option>
+      <Option type="QString" name="parameter_type" value="enum"/>
+      <Option type="bool" name="uses_static_strings" value="false"/>
+    </Option>
+    <Option type="Map" name="raster_surfaces">
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="Raster surfaces"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value="List of raster surfaces to be combined."/>
+      <Option type="int" name="layer_type" value="3"/>
+      <Option name="metadata"/>
+      <Option type="int" name="min_inputs" value="0"/>
+      <Option type="QString" name="name" value="raster_surfaces"/>
+      <Option type="QString" name="parameter_type" value="multilayer"/>
+    </Option>
+    <Option type="Map" name="reference_raster">
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="Reference raster"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value="A raster layer that will determine the pixel size and analysis extention of the analysis. Ideally it should be one of the input Raster surfaces."/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="reference_raster"/>
+      <Option type="QString" name="parameter_type" value="raster"/>
+    </Option>
+  </Option>
+  <Option type="StringList" name="parameterOrder">
+    <Option type="QString" value="raster_surfaces"/>
+    <Option type="QString" value="criteria"/>
+    <Option type="QString" value="reference_raster"/>
+  </Option>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="criteria">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="580"/>
+        <Option type="double" name="component_pos_y" value="15"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="criteria"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="160"/>
+      <Option type="double" name="component_pos_y" value="375"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="criteria"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="raster_surfaces">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="505.6"/>
+        <Option type="double" name="component_pos_y" value="339.8"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="raster_surfaces"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="160"/>
+      <Option type="double" name="component_pos_y" value="285"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="raster_surfaces"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="reference_raster">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="315.2"/>
+        <Option type="double" name="component_pos_y" value="168.60000000000002"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="reference_raster"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="160"/>
+      <Option type="double" name="component_pos_y" value="195"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="reference_raster"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+  </Option>
+</Option>

@@ -1,0 +1,1002 @@
+<!DOCTYPE model>
+<Option type="Map">
+  <Option type="Map" name="children">
+    <Option type="Map" name="native:condition_1">
+      <Option type="bool" name="active" value="true"/>
+      <Option type="Map" name="alg_config">
+        <Option type="List" name="conditions">
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 0"/>
+            <Option type="QString" name="name" value="Primary roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 1"/>
+            <Option type="QString" name="name" value="Secondary roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 2"/>
+            <Option type="QString" name="name" value="Tertiary roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 3"/>
+            <Option type="QString" name="name" value="Residential roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 4"/>
+            <Option type="QString" name="name" value="Tertiary and residential roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 5"/>
+            <Option type="QString" name="name" value="Tertiary and secondary roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 6"/>
+            <Option type="QString" name="name" value="secondary and primary roads"/>
+          </Option>
+          <Option type="Map">
+            <Option type="QString" name="expression" value="@road_type = 7"/>
+            <Option type="QString" name="name" value="all roads"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option type="QString" name="alg_id" value="native:condition"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="320"/>
+        <Option type="double" name="component_pos_y" value="115"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Conditional branch"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="1150"/>
+      <Option type="double" name="component_pos_y" value="495"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option name="dependencies"/>
+      <Option type="QString" name="id" value="native:condition_1"/>
+      <Option name="outputs"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option name="params"/>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_1">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1480"/>
+        <Option type="double" name="component_pos_y" value="460"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="75"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Primary roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_1"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="primary_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_1"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="primary_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="165"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="primary_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('primary','primary_link','trunk','trunk_link')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_2">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1580.1034"/>
+        <Option type="double" name="component_pos_y" value="482.0581"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="255"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Secondary roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_2"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="secondary_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_2"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="secondary_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="345"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="secondary_roads_OSM"/>
+          <Option type="QString" name="output_name" value="FAIL_OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('secondary','secondary_link')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_3">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1680.2068"/>
+        <Option type="double" name="component_pos_y" value="514.528"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="435"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Tertiary roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_3"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="tertiary_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_3"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="tertiary_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="525"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="Map" name="default_value">
+            <Option type="QString" name="class" value="QgsProcessingOutputLayerDefinition"/>
+            <Option type="Map" name="create_options">
+              <Option type="QString" name="fileEncoding" value="System"/>
+            </Option>
+            <Option type="Map" name="sink">
+              <Option type="bool" name="active" value="true"/>
+              <Option type="int" name="type" value="1"/>
+              <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+            </Option>
+          </Option>
+          <Option type="bool" name="mandatory" value="true"/>
+          <Option type="QString" name="name" value="tertiary_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('tertiary','tertiary_link')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_4">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1845.1372000000001"/>
+        <Option type="double" name="component_pos_y" value="529.7950000000001"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="615"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Residential roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_4"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="residential_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_4"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="residential_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="705"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="residential_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('residential')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_5">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1808.6263"/>
+        <Option type="double" name="component_pos_y" value="533.4994000000002"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="795"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Terciary and residential roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_5"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="terciary_and_residential_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_5"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="terciary_and_residential_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="885"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="terciary_and_residential_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('tertiary','tertiary_link', 'residential')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_6">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1832.7049"/>
+        <Option type="double" name="component_pos_y" value="522.3862000000001"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="975"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="Terciary and secondary roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_6"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="secondary_and_tertiary_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_6"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="secondary_and_tertiary_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="1065"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="secondary_and_tertiary_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('tertiary','tertiary_link','secondary','secondary_link')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_7">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="1719.3949030277142"/>
+        <Option type="double" name="component_pos_y" value="507.88055975695704"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="1155"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="secondary and primary roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_7"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="primary_and_secondary_roads_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_7"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="primary_and_secondary_roads_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="1245"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="primary_and_secondary_roads_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('secondary','secondary_link', 'primary', 'primary_link', 'trunk', 'trunk_link')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="Map" name="native:extractbyexpression_8">
+      <Option type="bool" name="active" value="true"/>
+      <Option name="alg_config"/>
+      <Option type="QString" name="alg_id" value="native:extractbyexpression"/>
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="2346.7480287000453"/>
+        <Option type="double" name="component_pos_y" value="1522.3614967515964"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="Extract by expression"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="430"/>
+      <Option type="double" name="component_pos_y" value="1335"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="List" name="dependencies">
+        <Option type="Map">
+          <Option type="QString" name="child_id" value="native:condition_1"/>
+          <Option type="QString" name="conditional_branch" value="all roads"/>
+        </Option>
+      </Option>
+      <Option type="QString" name="id" value="native:extractbyexpression_8"/>
+      <Option type="Map" name="outputs">
+        <Option type="Map" name="all_road_types_OSM">
+          <Option type="QString" name="child_id" value="native:extractbyexpression_8"/>
+          <Option type="QString" name="color" value=""/>
+          <Option type="Map" name="comment">
+            <Option type="QString" name="color" value=""/>
+            <Option type="QString" name="component_description" value=""/>
+            <Option type="double" name="component_height" value="60"/>
+            <Option type="double" name="component_pos_x" value="0"/>
+            <Option type="double" name="component_pos_y" value="0"/>
+            <Option type="double" name="component_width" value="100"/>
+            <Option type="bool" name="outputs_collapsed" value="true"/>
+            <Option type="bool" name="parameters_collapsed" value="true"/>
+          </Option>
+          <Option type="QString" name="component_description" value="all_road_types_OSM"/>
+          <Option type="double" name="component_height" value="30"/>
+          <Option type="double" name="component_pos_x" value="550"/>
+          <Option type="double" name="component_pos_y" value="1455"/>
+          <Option type="double" name="component_width" value="200"/>
+          <Option type="invalid" name="default_value"/>
+          <Option type="bool" name="mandatory" value="false"/>
+          <Option type="QString" name="name" value="all_road_types_OSM"/>
+          <Option type="QString" name="output_name" value="OUTPUT"/>
+          <Option type="bool" name="outputs_collapsed" value="true"/>
+          <Option type="bool" name="parameters_collapsed" value="true"/>
+        </Option>
+      </Option>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+      <Option type="Map" name="params">
+        <Option type="List" name="EXPRESSION">
+          <Option type="Map">
+            <Option type="int" name="source" value="2"/>
+            <Option type="QString" name="static_value" value="&quot;fclass&quot; in ('primary','primary_link','trunk','trunk_link','secondary','secondary_link','tertiary','tertiary_link','residential')"/>
+          </Option>
+        </Option>
+        <Option type="List" name="INPUT">
+          <Option type="Map">
+            <Option type="QString" name="parameter_name" value="road_network_from_osm"/>
+            <Option type="int" name="source" value="0"/>
+          </Option>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option type="Map" name="designerParameterValues">
+    <Option type="QgsProcessingOutputLayerDefinition" name="all_road_types_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="primary_and_secondary_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="primary_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="residential_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QString" name="road_network_from_osm" value="roads_56cf0f33_17ac_45ed_ab42_64929ed563a0"/>
+    <Option type="int" name="road_type" value="0"/>
+    <Option type="QgsProcessingOutputLayerDefinition" name="secondary_and_tertiary_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="secondary_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="terciary_and_residential_roads_osm">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+    <Option type="QgsProcessingOutputLayerDefinition" name="tertiary_link">
+      <Option type="Map">
+        <Option type="Map" name="create_options">
+          <Option type="QString" name="fileEncoding" value="System"/>
+        </Option>
+        <Option type="Map" name="sink">
+          <Option type="bool" name="active" value="true"/>
+          <Option type="int" name="type" value="1"/>
+          <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+        </Option>
+      </Option>
+    </Option>
+  </Option>
+  <Option name="groupBoxes"/>
+  <Option type="Map" name="help">
+    <Option type="QString" name="ALG_CREATOR" value="Algorithm author: André da Silva Mano | Faculty ITC - University of Twente | Department of Urban and Regional Planning and Geo-Information Management | 2022 "/>
+    <Option type="QString" name="ALG_DESC" value="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;>&#xa;&lt;html>&lt;head>&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; />&lt;style type=&quot;text/css&quot;>&#xa;&#xa;&lt;/style>&lt;/head>&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;>&#xa;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;>Extracts roads according to their typology. Works only with data from Open Street Map (OSM). The OSM road datasets can be downloaded either from www.osm.org or by downloading data extracts from https://download.geofabrik.de/ (recommended). The output can be used as the road input for the &lt;span style=&quot; font-weight:600; font-style:italic;&quot;>Create interpolated surface&lt;/span>&lt;span style=&quot; font-style:italic;&quot;> (with or without restriction)&lt;/span> in the cases where no datasets of better quality are available.&lt;/p>&lt;/body>&lt;/html>"/>
+    <Option type="QString" name="ALG_VERSION" value="0.1"/>
+    <Option type="QString" name="all_road_types_osm" value="All OSM road types, except pedestrian and cycle paths."/>
+    <Option type="QString" name="primary_and_secondary_roads_osm" value="OSM primary and tertiary roads."/>
+    <Option type="QString" name="primary_roads_osm" value="OSM Primary roads."/>
+    <Option type="QString" name="residential_roads_osm" value="OSM residential roads."/>
+    <Option type="QString" name="road_network_from_osm" value="Line vector layer representing roads from OSM."/>
+    <Option type="QString" name="road_type" value="The typology of roads that can be extracted. Eight (8) options are available:&#xa;&#xa;-Primary roads;&#xa;-Secondary roads;&#xa;- Tertiary roads;&#xa;- Residential roads; &#xa;- Tertiary AND residential roads;&#xa;- Secondary AND tertiary roads;&#xa;- Primary AND secondary roads; &#xa;- All road types"/>
+    <Option type="QString" name="secondary_and_tertiary_roads_osm" value="OSM secondary and tertiary roads."/>
+    <Option type="QString" name="secondary_roads_osm" value="OSM secondary roads."/>
+    <Option type="QString" name="terciary_and_residential_roads_osm" value="OSM tertiary and residential roads."/>
+    <Option type="QString" name="tertiary_link" value="OSM tertiary roads."/>
+  </Option>
+  <Option type="QString" name="internal_version" value="Version2"/>
+  <Option name="modelVariables"/>
+  <Option type="QString" name="model_group" value="SDF"/>
+  <Option type="QString" name="model_name" value="Extract roads by type (from OSM)"/>
+  <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="all_road_types_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="all_road_types_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_8"/>
+        <Option type="QString" name="_modelChildOutputName" value="all_road_types_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="all_road_types_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="primary_and_secondary_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="primary_and_secondary_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_7"/>
+        <Option type="QString" name="_modelChildOutputName" value="primary_and_secondary_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="primary_and_secondary_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="primary_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="primary_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_1"/>
+        <Option type="QString" name="_modelChildOutputName" value="primary_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="primary_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="residential_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="residential_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_4"/>
+        <Option type="QString" name="_modelChildOutputName" value="residential_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="residential_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="road_network_from_osm">
+      <Option type="List" name="data_types">
+        <Option type="int" value="1"/>
+      </Option>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="Road Network (from OSM)"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="road_network_from_osm"/>
+      <Option type="QString" name="parameter_type" value="vector"/>
+    </Option>
+    <Option type="Map" name="road_type">
+      <Option type="bool" name="allow_multiple" value="false"/>
+      <Option name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="Road type"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option name="metadata"/>
+      <Option type="QString" name="name" value="road_type"/>
+      <Option type="StringList" name="options">
+        <Option type="QString" value="Primary"/>
+        <Option type="QString" value="Secondary"/>
+        <Option type="QString" value="Tertiary"/>
+        <Option type="QString" value="Residential"/>
+        <Option type="QString" value="Tertiary AND residential"/>
+        <Option type="QString" value="Secondary AND tertiary"/>
+        <Option type="QString" value="Primary AND secondary"/>
+        <Option type="QString" value="All"/>
+      </Option>
+      <Option type="QString" name="parameter_type" value="enum"/>
+      <Option type="bool" name="uses_static_strings" value="false"/>
+    </Option>
+    <Option type="Map" name="secondary_and_tertiary_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="secondary_and_tertiary_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_6"/>
+        <Option type="QString" name="_modelChildOutputName" value="secondary_and_tertiary_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="secondary_and_tertiary_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="secondary_roads_osm">
+      <Option type="bool" name="create_by_default" value="false"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="secondary_roads_OSM"/>
+      <Option type="int" name="flags" value="8"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_2"/>
+        <Option type="QString" name="_modelChildOutputName" value="secondary_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="secondary_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="terciary_and_residential_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="terciary_and_residential_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_5"/>
+        <Option type="QString" name="_modelChildOutputName" value="terciary_and_residential_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="terciary_and_residential_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+    <Option type="Map" name="tertiary_roads_osm">
+      <Option type="bool" name="create_by_default" value="true"/>
+      <Option type="int" name="data_type" value="-1"/>
+      <Option type="QgsProcessingOutputLayerDefinition" name="default">
+        <Option type="Map">
+          <Option type="Map" name="create_options">
+            <Option type="QString" name="fileEncoding" value="System"/>
+          </Option>
+          <Option type="Map" name="sink">
+            <Option type="bool" name="active" value="true"/>
+            <Option type="int" name="type" value="1"/>
+            <Option type="QString" name="val" value="TEMPORARY_OUTPUT"/>
+          </Option>
+        </Option>
+      </Option>
+      <Option type="invalid" name="defaultGui"/>
+      <Option type="QString" name="description" value="tertiary_roads_OSM"/>
+      <Option type="int" name="flags" value="0"/>
+      <Option type="QString" name="help" value=""/>
+      <Option type="Map" name="metadata">
+        <Option type="QString" name="_modelChildId" value="native:extractbyexpression_3"/>
+        <Option type="QString" name="_modelChildOutputName" value="tertiary_roads_OSM"/>
+        <Option type="QString" name="_modelChildProvider" value="native"/>
+      </Option>
+      <Option type="QString" name="name" value="tertiary_roads_osm"/>
+      <Option type="QString" name="parameter_type" value="sink"/>
+      <Option type="bool" name="supports_append" value="false"/>
+      <Option type="bool" name="supports_non_file_outputs" value="true"/>
+    </Option>
+  </Option>
+  <Option name="parameterOrder"/>
+  <Option type="Map" name="parameters">
+    <Option type="Map" name="road_network_from_osm">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="341.6"/>
+        <Option type="double" name="component_pos_y" value="185.4"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="road_network_from_osm"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="130"/>
+      <Option type="double" name="component_pos_y" value="135"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="road_network_from_osm"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+    <Option type="Map" name="road_type">
+      <Option type="QString" name="color" value=""/>
+      <Option type="Map" name="comment">
+        <Option type="QString" name="color" value=""/>
+        <Option type="QString" name="component_description" value=""/>
+        <Option type="double" name="component_height" value="60"/>
+        <Option type="double" name="component_pos_x" value="320"/>
+        <Option type="double" name="component_pos_y" value="15"/>
+        <Option type="double" name="component_width" value="100"/>
+        <Option type="bool" name="outputs_collapsed" value="true"/>
+        <Option type="bool" name="parameters_collapsed" value="true"/>
+      </Option>
+      <Option type="QString" name="component_description" value="road_type"/>
+      <Option type="double" name="component_height" value="30"/>
+      <Option type="double" name="component_pos_x" value="130"/>
+      <Option type="double" name="component_pos_y" value="75"/>
+      <Option type="double" name="component_width" value="200"/>
+      <Option type="QString" name="name" value="road_type"/>
+      <Option type="bool" name="outputs_collapsed" value="true"/>
+      <Option type="bool" name="parameters_collapsed" value="true"/>
+    </Option>
+  </Option>
+</Option>
