@@ -953,10 +953,9 @@
     <Option value="The transition area is essentially the fuzy boundary of any given restriction. In the case of a natural feature like a lake, this transition tends to be shorter whereas in the case of a protected area, human activity is still present in the boundaries of that area. " type="QString" name="transition_area_in_meters"/>
     <Option value="The desired pixel size for the output raster. Because the final result is the input for a second procedure, the chosen resolution should preferably be the same for both tools. " type="QString" name="working_resolution"/>
   </Option>
-  <Option value="Version2" type="QString" name="internal_version"/>
   <Option name="modelVariables"/>
   <Option value="SDF" type="QString" name="model_group"/>
-  <Option value="Create restriction surface" type="QString" name="model_name"/>
+  <Option value="[1] Create restriction surface" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
     <Option type="Map" name="extent">
       <Option type="List" name="data_types">
@@ -971,19 +970,15 @@
       <Option value="extent" type="QString" name="name"/>
       <Option value="vector" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="restriction_surface">
+    <Option type="Map" name="gdal:fillnodata_1:Restriction surface">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
       <Option value="Restriction surface" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="gdal:fillnodata_1" type="QString" name="_modelChildId"/>
-        <Option value="Restriction surface" type="QString" name="_modelChildOutputName"/>
-        <Option value="gdal" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="restriction_surface" type="QString" name="name"/>
+      <Option name="metadata"/>
+      <Option value="gdal:fillnodata_1:Restriction surface" type="QString" name="name"/>
       <Option value="rasterDestination" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="supports_non_file_outputs"/>
     </Option>

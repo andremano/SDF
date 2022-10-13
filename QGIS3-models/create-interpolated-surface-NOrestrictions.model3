@@ -602,7 +602,7 @@
       <Option name="dependencies"/>
       <Option value="grass7:v.surf.idw_1" type="QString" name="id"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="Interpolated surface (without roads)">
+        <Option type="Map" name="Interpolated_NO_roads">
           <Option value="grass7:v.surf.idw_1" type="QString" name="child_id"/>
           <Option value="" type="QString" name="color"/>
           <Option type="Map" name="comment">
@@ -615,14 +615,14 @@
             <Option value="true" type="bool" name="outputs_collapsed"/>
             <Option value="true" type="bool" name="parameters_collapsed"/>
           </Option>
-          <Option value="Interpolated surface (without roads)" type="QString" name="component_description"/>
+          <Option value="Interpolated_NO_roads" type="QString" name="component_description"/>
           <Option value="30" type="double" name="component_height"/>
-          <Option value="0" type="double" name="component_pos_x"/>
-          <Option value="0" type="double" name="component_pos_y"/>
+          <Option value="810" type="double" name="component_pos_x"/>
+          <Option value="240" type="double" name="component_pos_y"/>
           <Option value="200" type="double" name="component_width"/>
           <Option type="invalid" name="default_value"/>
           <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Interpolated surface (without roads)" type="QString" name="name"/>
+          <Option value="Interpolated_NO_roads" type="QString" name="name"/>
           <Option value="output" type="QString" name="output_name"/>
           <Option value="true" type="bool" name="outputs_collapsed"/>
           <Option value="true" type="bool" name="parameters_collapsed"/>
@@ -839,7 +839,7 @@
       <Option name="dependencies"/>
       <Option value="saga:simplefilter_1" type="QString" name="id"/>
       <Option type="Map" name="outputs">
-        <Option type="Map" name="Interpolated surface">
+        <Option type="Map" name="Interpolated_WITH_roads">
           <Option value="saga:simplefilter_1" type="QString" name="child_id"/>
           <Option value="" type="QString" name="color"/>
           <Option type="Map" name="comment">
@@ -852,14 +852,14 @@
             <Option value="true" type="bool" name="outputs_collapsed"/>
             <Option value="true" type="bool" name="parameters_collapsed"/>
           </Option>
-          <Option value="Interpolated surface" type="QString" name="component_description"/>
+          <Option value="Interpolated_WITH_roads" type="QString" name="component_description"/>
           <Option value="30" type="double" name="component_height"/>
-          <Option value="1390" type="double" name="component_pos_x"/>
-          <Option value="645" type="double" name="component_pos_y"/>
+          <Option value="1410" type="double" name="component_pos_x"/>
+          <Option value="600" type="double" name="component_pos_y"/>
           <Option value="200" type="double" name="component_width"/>
           <Option type="invalid" name="default_value"/>
           <Option value="false" type="bool" name="mandatory"/>
-          <Option value="Interpolated surface" type="QString" name="name"/>
+          <Option value="Interpolated_WITH_roads" type="QString" name="name"/>
           <Option value="RESULT" type="QString" name="output_name"/>
           <Option value="true" type="bool" name="outputs_collapsed"/>
           <Option value="true" type="bool" name="parameters_collapsed"/>
@@ -928,6 +928,7 @@
     <Option value="A polygon layer representing the spread of centrality accoring to the intervals defined under the isoplate interval parameter." type="QString" name="gdal:contour_polygon_1:isoplates"/>
     <Option value="A raster layer representing the continous surface used to extract isoplates." type="QString" name="gdal:rastercalculator_1:interpolated_surface"/>
     <Option value="A raster layer whose pixel values represent a prediction of the centrality score values. The prediction values DO NOT take into account the road network." type="QString" name="grass7:v.surf.idw_1:Interpolated surface (without roads)"/>
+    <Option value="A raster surface with interpolated values from the centrality scores ONLY." type="QString" name="grass7:v.surf.idw_1:Interpolated_NO_roads"/>
     <Option value="The power parameter of the Inverse Distance Weighing (IDW) interpolation. The higher the value, the more the importance of surrounding points decrease. " type="QString" name="interpolation_score_idw"/>
     <Option value="A value from 0.1 to 5 to be used to generate a continours surface generated with Inverse Distance Weighing (IDW) interpolation. The higher the score, the greater is the spread and influence of a urban center. Default value is 2." type="QString" name="interpolationscoreidw"/>
     <Option value="Interval for isoplate generation. Minimum value is 1, and maxium value is 40. Default value is 1." type="QString" name="isoplatesinterval"/>
@@ -938,15 +939,15 @@
     <Option value="A line vector layer representing the road network. The network does not have to be topologically consistent because the tool only evaluates the presence or absence of a road ignoring connectivity or direction. " type="QString" name="road_network"/>
     <Option value="The maximum distance the Road influence parameter affects. That influence decays linearly with distance. For example: in a scenario of having the Road influence parameter set to 2 and a road 'spread' parameter set to 1000m, a pixel 500m away from the road will have the value ~1.5, and the pixels located at 1000m or more will be assigned the value of 1. " type="QString" name="road_spread"/>
     <Option value="A raster layer whose pixel values represent a prediction of the centrality score values." type="QString" name="saga:simplefilter_1:Interpolated surface"/>
+    <Option value="A raster surface with interpolated values from the centrality scores AND the road network." type="QString" name="saga:simplefilter_1:Interpolated_WITH_roads"/>
     <Option value="A point layer representing the urban centers. The attribute table MUST contain one attribute with the centrality calculated from the Matrix of Functions (MoF)." type="QString" name="urban_centers"/>
     <Option value="Vector Points reprsenting urban centers." type="QString" name="urbancenters"/>
     <Option value="An attribute of the Urban centers vector layer contaiining centrality scores." type="QString" name="urbancenterscore"/>
     <Option value="The desired pixel size for the output raster. Because the final result is the input for a second tool, the chosen resolution should preferably be the same for both tools. " type="QString" name="working_resolution"/>
   </Option>
-  <Option value="Version1" type="QString" name="internal_version"/>
   <Option name="modelVariables"/>
   <Option value="SDF" type="QString" name="model_group"/>
-  <Option value="Create interpolated surface (no restrictions)" type="QString" name="model_name"/>
+  <Option value="[2] Create interpolated surface (no restrictions)" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
     <Option type="Map" name="analysis_extent">
       <Option type="List" name="data_types">
@@ -976,19 +977,15 @@
       <Option value="field" type="QString" name="parameter_type"/>
       <Option value="urban_centers" type="QString" name="parent_layer"/>
     </Option>
-    <Option type="Map" name="grass7:v.surf.idw_1:Interpolated surface (without roads)">
+    <Option type="Map" name="grass7:v.surf.idw_1:Interpolated_NO_roads">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option value="Interpolated surface (without roads)" type="QString" name="description"/>
+      <Option value="Interpolated_NO_roads" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="grass7:v.surf.idw_1" type="QString" name="_modelChildId"/>
-        <Option value="Interpolated surface (without roads)" type="QString" name="_modelChildOutputName"/>
-        <Option value="grass7" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="grass7:v.surf.idw_1:Interpolated surface (without roads)" type="QString" name="name"/>
+      <Option name="metadata"/>
+      <Option value="grass7:v.surf.idw_1:Interpolated_NO_roads" type="QString" name="name"/>
       <Option value="rasterDestination" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="supports_non_file_outputs"/>
     </Option>
@@ -1042,19 +1039,15 @@
       <Option value="road_spread" type="QString" name="name"/>
       <Option value="number" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="saga:simplefilter_1:Interpolated surface">
+    <Option type="Map" name="saga:simplefilter_1:Interpolated_WITH_roads">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
-      <Option value="Interpolated surface" type="QString" name="description"/>
+      <Option value="Interpolated_WITH_roads" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="saga:simplefilter_1" type="QString" name="_modelChildId"/>
-        <Option value="Interpolated surface" type="QString" name="_modelChildOutputName"/>
-        <Option value="saga" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="saga:simplefilter_1:Interpolated surface" type="QString" name="name"/>
+      <Option name="metadata"/>
+      <Option value="saga:simplefilter_1:Interpolated_WITH_roads" type="QString" name="name"/>
       <Option value="rasterDestination" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="supports_non_file_outputs"/>
     </Option>

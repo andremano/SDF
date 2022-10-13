@@ -116,27 +116,10 @@
     <Option value="List of raster surfaces to be combined." type="QString" name="raster_surfaces"/>
     <Option value="A raster layer that will determine the pixel size and analysis extention of the analysis. Ideally it should be one of the input Raster surfaces." type="QString" name="reference_raster"/>
   </Option>
-  <Option value="Version2" type="QString" name="internal_version"/>
   <Option name="modelVariables"/>
   <Option value="SDF" type="QString" name="model_group"/>
-  <Option value="Combine raster surfaces" type="QString" name="model_name"/>
+  <Option value="[5] Combine raster surfaces" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
-    <Option type="Map" name="combined_surface">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option type="invalid" name="defaultGui"/>
-      <Option value="combined_surface" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="native:cellstatistics_1" type="QString" name="_modelChildId"/>
-        <Option value="combined_surface" type="QString" name="_modelChildOutputName"/>
-        <Option value="native" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="combined_surface" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="true" type="bool" name="supports_non_file_outputs"/>
-    </Option>
     <Option type="Map" name="criteria">
       <Option value="false" type="bool" name="allow_multiple"/>
       <Option type="invalid" name="default"/>
@@ -153,6 +136,18 @@
       </Option>
       <Option value="enum" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="uses_static_strings"/>
+    </Option>
+    <Option type="Map" name="native:cellstatistics_1:combined_surface">
+      <Option value="true" type="bool" name="create_by_default"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="combined_surface" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="" type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="native:cellstatistics_1:combined_surface" type="QString" name="name"/>
+      <Option value="rasterDestination" type="QString" name="parameter_type"/>
+      <Option value="true" type="bool" name="supports_non_file_outputs"/>
     </Option>
     <Option type="Map" name="raster_surfaces">
       <Option type="invalid" name="default"/>

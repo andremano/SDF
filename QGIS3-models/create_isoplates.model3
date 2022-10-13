@@ -488,11 +488,22 @@
     <Option value="A polygon layer with an attribute containing the hierarchy level of each polygon." type="QString" name="isoplates"/>
     <Option value="The reclassification rules according to GRASS r.reclass tool. Example:&#xa;&#xa;0 thru 19 = 1&#xa;19 thru 84 = 2&#xa;84 thru 105 = 3&#xa;105 thru 150 = 4&#xa;150 thru 193 = 5&#xa;193 thru 264 = 6&#xa;264 thru 489 = 8&#xa;489 thru 99999 = 12&#xa;&#xa;The intervals of the rules must be consistent with the hierarchy  boundaries of centrality scores defined by the Matrix of Functions (MoF)." type="QString" name="reclassification_rules"/>
   </Option>
-  <Option value="Version2" type="QString" name="internal_version"/>
   <Option name="modelVariables"/>
   <Option value="SDF" type="QString" name="model_group"/>
-  <Option value="Create isoplates" type="QString" name="model_name"/>
+  <Option value="[3] Create isoplates" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
+    <Option type="Map" name="gdal:cliprasterbymasklayer_1:hierarchy_surface">
+      <Option value="true" type="bool" name="create_by_default"/>
+      <Option type="invalid" name="default"/>
+      <Option type="invalid" name="defaultGui"/>
+      <Option value="hierarchy_surface" type="QString" name="description"/>
+      <Option value="0" type="int" name="flags"/>
+      <Option value="" type="QString" name="help"/>
+      <Option name="metadata"/>
+      <Option value="gdal:cliprasterbymasklayer_1:hierarchy_surface" type="QString" name="name"/>
+      <Option value="rasterDestination" type="QString" name="parameter_type"/>
+      <Option value="false" type="bool" name="supports_non_file_outputs"/>
+    </Option>
     <Option type="Map" name="geographic_extent">
       <Option name="data_types"/>
       <Option type="invalid" name="default"/>
@@ -504,22 +515,6 @@
       <Option value="geographic_extent" type="QString" name="name"/>
       <Option value="vector" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="hierarchy_surface">
-      <Option value="true" type="bool" name="create_by_default"/>
-      <Option type="invalid" name="default"/>
-      <Option type="invalid" name="defaultGui"/>
-      <Option value="hierarchy_surface" type="QString" name="description"/>
-      <Option value="0" type="int" name="flags"/>
-      <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="gdal:cliprasterbymasklayer_1" type="QString" name="_modelChildId"/>
-        <Option value="hierarchy_surface" type="QString" name="_modelChildOutputName"/>
-        <Option value="gdal" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="hierarchy_surface" type="QString" name="name"/>
-      <Option value="rasterDestination" type="QString" name="parameter_type"/>
-      <Option value="false" type="bool" name="supports_non_file_outputs"/>
-    </Option>
     <Option type="Map" name="interpolated_surface">
       <Option type="invalid" name="default"/>
       <Option type="invalid" name="defaultGui"/>
@@ -530,7 +525,7 @@
       <Option value="interpolated_surface" type="QString" name="name"/>
       <Option value="raster" type="QString" name="parameter_type"/>
     </Option>
-    <Option type="Map" name="isoplates">
+    <Option type="Map" name="native:smoothgeometry_1:Isoplates">
       <Option value="true" type="bool" name="create_by_default"/>
       <Option value="-1" type="int" name="data_type"/>
       <Option type="invalid" name="default"/>
@@ -538,12 +533,8 @@
       <Option value="Isoplates" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
       <Option value="" type="QString" name="help"/>
-      <Option type="Map" name="metadata">
-        <Option value="native:smoothgeometry_1" type="QString" name="_modelChildId"/>
-        <Option value="Isoplates" type="QString" name="_modelChildOutputName"/>
-        <Option value="native" type="QString" name="_modelChildProvider"/>
-      </Option>
-      <Option value="isoplates" type="QString" name="name"/>
+      <Option name="metadata"/>
+      <Option value="native:smoothgeometry_1:Isoplates" type="QString" name="name"/>
       <Option value="sink" type="QString" name="parameter_type"/>
       <Option value="true" type="bool" name="supports_append"/>
       <Option value="true" type="bool" name="supports_non_file_outputs"/>
