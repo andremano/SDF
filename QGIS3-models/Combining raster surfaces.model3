@@ -39,8 +39,8 @@
           </Option>
           <Option value="combined_surface" type="QString" name="component_description"/>
           <Option value="30" type="double" name="component_height"/>
-          <Option value="0" type="double" name="component_pos_x"/>
-          <Option value="0" type="double" name="component_pos_y"/>
+          <Option value="660" type="double" name="component_pos_x"/>
+          <Option value="450" type="double" name="component_pos_y"/>
           <Option value="200" type="double" name="component_width"/>
           <Option type="invalid" name="default_value"/>
           <Option value="false" type="bool" name="mandatory"/>
@@ -79,15 +79,17 @@
         </Option>
         <Option type="List" name="STATISTIC">
           <Option type="Map">
-            <Option value="criteria" type="QString" name="parameter_name"/>
-            <Option value="0" type="int" name="source"/>
+            <Option value="case when  @criteria__2_ ilike '0' then '7'&#xd;&#xa;when @criteria__2_ ilike '1' then '2'&#xd;&#xa;when @criteria__2_ ilike '2' then '6'&#xd;&#xa;end" type="QString" name="expression"/>
+            <Option value="3" type="int" name="source"/>
           </Option>
         </Option>
       </Option>
     </Option>
   </Option>
   <Option type="Map" name="designerParameterValues">
-    <Option type="QgsProcessingOutputLayerDefinition" name="combined_surface">
+    <Option value="2" type="int" name="criteria"/>
+    <Option value="1" type="int" name="criteria (2)"/>
+    <Option type="QgsProcessingOutputLayerDefinition" name="native:cellstatistics_1:combined_surface">
       <Option type="Map">
         <Option type="Map" name="create_options">
           <Option value="System" type="QString" name="fileEncoding"/>
@@ -99,12 +101,11 @@
         </Option>
       </Option>
     </Option>
-    <Option value="2" type="int" name="criteria"/>
     <Option type="List" name="raster_surfaces">
-      <Option value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_MsIhXk/ab712341b4784b389a90e7a264c1487e/RESULT.sdat" type="QString"/>
-      <Option value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_MsIhXk/728b4522936e491c8e14af3be1fdc0b8/RESULT.sdat" type="QString"/>
+      <Option value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_KwthzZ/805d57d706b24538b8e850b8653d0afb/OUTPUT.tif" type="QString"/>
+      <Option value="C:/Users/DaSilvaA/AppData/Local/Temp/processing_KwthzZ/b7aa42d2da4e45f991df42864cf2d80f/OUTPUT.tif" type="QString"/>
     </Option>
-    <Option value="RESULT_68fa5148_780f_4b67_b5de_a7338c6d1be3" type="QString" name="reference_raster"/>
+    <Option value="OUTPUT_e66368ed_2429_40fd_bc2c_648dacdfc3ad" type="QString" name="reference_raster"/>
   </Option>
   <Option name="groupBoxes"/>
   <Option type="Map" name="help">
@@ -120,19 +121,19 @@
   <Option value="SDF" type="QString" name="model_group"/>
   <Option value="[5] Combine raster surfaces" type="QString" name="model_name"/>
   <Option type="Map" name="parameterDefinitions">
-    <Option type="Map" name="criteria">
+    <Option type="Map" name="criteria (2)">
       <Option value="false" type="bool" name="allow_multiple"/>
-      <Option type="invalid" name="default"/>
+      <Option name="default"/>
       <Option type="invalid" name="defaultGui"/>
       <Option value="Criteria" type="QString" name="description"/>
       <Option value="0" type="int" name="flags"/>
-      <Option value="Which aggregation criteria is to be used: Max (maximum), Min (minimum) the Mean." type="QString" name="help"/>
+      <Option value="" type="QString" name="help"/>
       <Option name="metadata"/>
-      <Option value="criteria" type="QString" name="name"/>
+      <Option value="criteria (2)" type="QString" name="name"/>
       <Option type="StringList" name="options">
-        <Option value="Max" type="QString"/>
-        <Option value="Min" type="QString"/>
+        <Option value="Maximum" type="QString"/>
         <Option value="Mean" type="QString"/>
+        <Option value="Minimum" type="QString"/>
       </Option>
       <Option value="enum" type="QString" name="parameter_type"/>
       <Option value="false" type="bool" name="uses_static_strings"/>
@@ -178,24 +179,24 @@
     <Option value="reference_raster" type="QString"/>
   </Option>
   <Option type="Map" name="parameters">
-    <Option type="Map" name="criteria">
+    <Option type="Map" name="criteria (2)">
       <Option value="" type="QString" name="color"/>
       <Option type="Map" name="comment">
         <Option value="" type="QString" name="color"/>
-        <Option value="" type="QString" name="component_description"/>
+        <Option value="This input passes an index number and not the actual text values. Threrefore, the input index number has to match the index number of the tool 'Cell statistics'.&#xa;&#xa;In this case:&#xa;&#xa; _____________________________________________________&#xa;| Tool text  | Tool index | Cell statistics text | Cell statistics Index |&#xa;+------------+-------------+---------------------+-----------------------|&#xa;| Maximum |        0       |      Maximum       |              6             |&#xa;+------------+-------------+---------------------+-----------------------|&#xa;|    Mean    |        1       |          Mean         |              2             |&#xa;+------------+-------------+---------------------+-----------------------|&#xa;| Minimum  |        2       |       Minimum       |             7              |&#xa;+------------+-------------+---------------------+-----------------------|&#xa;" type="QString" name="component_description"/>
         <Option value="60" type="double" name="component_height"/>
-        <Option value="580" type="double" name="component_pos_x"/>
-        <Option value="15" type="double" name="component_pos_y"/>
+        <Option value="502.4" type="double" name="component_pos_x"/>
+        <Option value="56.60000000000008" type="double" name="component_pos_y"/>
         <Option value="100" type="double" name="component_width"/>
         <Option value="true" type="bool" name="outputs_collapsed"/>
         <Option value="true" type="bool" name="parameters_collapsed"/>
       </Option>
-      <Option value="criteria" type="QString" name="component_description"/>
+      <Option value="criteria (2)" type="QString" name="component_description"/>
       <Option value="30" type="double" name="component_height"/>
-      <Option value="160" type="double" name="component_pos_x"/>
-      <Option value="375" type="double" name="component_pos_y"/>
+      <Option value="476" type="double" name="component_pos_x"/>
+      <Option value="147.79999999999998" type="double" name="component_pos_y"/>
       <Option value="200" type="double" name="component_width"/>
-      <Option value="criteria" type="QString" name="name"/>
+      <Option value="criteria (2)" type="QString" name="name"/>
       <Option value="true" type="bool" name="outputs_collapsed"/>
       <Option value="true" type="bool" name="parameters_collapsed"/>
     </Option>

@@ -228,12 +228,6 @@
             <Option value="" type="QString" name="static_value"/>
           </Option>
         </Option>
-        <Option type="List" name="PROJWIN">
-          <Option type="Map">
-            <Option value="2" type="int" name="source"/>
-            <Option type="invalid" name="static_value"/>
-          </Option>
-        </Option>
         <Option type="List" name="RTYPE">
           <Option type="Map">
             <Option value="2" type="int" name="source"/>
@@ -950,7 +944,7 @@
     <Option value="A polygon layer providing the geographic extent of the analysis." type="QString" name="extent"/>
     <Option value="A raster surface with values between  0.1 and 1 where 0.1 represents a highly restricted area, and 1 configures areas without restrictions. " type="QString" name="restriction_surface"/>
     <Option value="A polygon layer representing restricted areas. The tool does not discriminate levels of restriction; therefore, in the case of areas with different levels of restrictiveness, it should be executed using distinct Transition area (in meters) - see below - values for each type of restriction. " type="QString" name="restrictions"/>
-    <Option value="The transition area is essentially the fuzy boundary of any given restriction. In the case of a natural feature like a lake, this transition tends to be shorter whereas in the case of a protected area, human activity is still present in the boundaries of that area. " type="QString" name="transition_area_in_meters"/>
+    <Option value="The transition area is essentially the fuzy boundary of any given restriction. In the case of a natural feature like a lake, this transition tends to be shorter whereas in the case of a protected area, human activity is still present in the boundaries of that area. The transition area MUST BE AT LEAST twice the size of the 'Working Resolution'. (i.g. if the 'Working resolution is set to 100, then the 'Transition area' must be set to at least 200. " type="QString" name="transition_area_in_meters"/>
     <Option value="The desired pixel size for the output raster. Because the final result is the input for a second procedure, the chosen resolution should preferably be the same for both tools. " type="QString" name="working_resolution"/>
   </Option>
   <Option name="modelVariables"/>
